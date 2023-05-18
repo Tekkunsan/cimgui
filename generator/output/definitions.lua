@@ -20119,7 +20119,7 @@ defs["igImPow"]["(double,double)"] = defs["igImPow"][2]
 defs["igImPow"]["(float,float)"] = defs["igImPow"][1]
 defs["igImQsort"] = {}
 defs["igImQsort"][1] = {}
-defs["igImQsort"][1]["args"] = "(void* base,size_t count,size_t size_of_element,int(*compare_func)(void const*,void const*))"
+defs["igImQsort"][1]["args"] = "(void* base,size_t count,size_t size_of_element,int(__cdecl*compare_func)(void const*,void const*))"
 defs["igImQsort"][1]["argsT"] = {}
 defs["igImQsort"][1]["argsT"][1] = {}
 defs["igImQsort"][1]["argsT"][1]["name"] = "base"
@@ -20131,11 +20131,12 @@ defs["igImQsort"][1]["argsT"][3] = {}
 defs["igImQsort"][1]["argsT"][3]["name"] = "size_of_element"
 defs["igImQsort"][1]["argsT"][3]["type"] = "size_t"
 defs["igImQsort"][1]["argsT"][4] = {}
+defs["igImQsort"][1]["argsT"][4]["has_cdecl"] = "__cdecl"
 defs["igImQsort"][1]["argsT"][4]["name"] = "compare_func"
 defs["igImQsort"][1]["argsT"][4]["ret"] = "int"
 defs["igImQsort"][1]["argsT"][4]["signature"] = "(void const*,void const*)"
-defs["igImQsort"][1]["argsT"][4]["type"] = "int(*)(void const*,void const*)"
-defs["igImQsort"][1]["argsoriginal"] = "(void* base,size_t count,size_t size_of_element,int(*compare_func)(void const*,void const*))"
+defs["igImQsort"][1]["argsT"][4]["type"] = "int(__cdecl*)(void const*,void const*)"
+defs["igImQsort"][1]["argsoriginal"] = "(void* base,size_t count,size_t size_of_element,int(__cdecl* compare_func)(void const*,void const*))"
 defs["igImQsort"][1]["call_args"] = "(base,count,size_of_element,compare_func)"
 defs["igImQsort"][1]["cimguiname"] = "igImQsort"
 defs["igImQsort"][1]["defaults"] = {}
@@ -20143,9 +20144,9 @@ defs["igImQsort"][1]["funcname"] = "ImQsort"
 defs["igImQsort"][1]["location"] = "imgui_internal:345"
 defs["igImQsort"][1]["ov_cimguiname"] = "igImQsort"
 defs["igImQsort"][1]["ret"] = "void"
-defs["igImQsort"][1]["signature"] = "(void*,size_t,size_t,int(*)(void const*,void const*))"
+defs["igImQsort"][1]["signature"] = "(void*,size_t,size_t,int(__cdecl*)(void const*,void const*))"
 defs["igImQsort"][1]["stname"] = ""
-defs["igImQsort"]["(void*,size_t,size_t,int(*)(void const*,void const*))"] = defs["igImQsort"][1]
+defs["igImQsort"]["(void*,size_t,size_t,int(__cdecl*)(void const*,void const*))"] = defs["igImQsort"][1]
 defs["igImRotate"] = {}
 defs["igImRotate"][1] = {}
 defs["igImRotate"][1]["args"] = "(ImVec2 *pOut,const ImVec2 v,float cos_a,float sin_a)"
@@ -20186,7 +20187,7 @@ defs["igImRsqrt"][1]["call_args"] = "(x)"
 defs["igImRsqrt"][1]["cimguiname"] = "igImRsqrt"
 defs["igImRsqrt"][1]["defaults"] = {}
 defs["igImRsqrt"][1]["funcname"] = "ImRsqrt"
-defs["igImRsqrt"][1]["location"] = "imgui_internal:444"
+defs["igImRsqrt"][1]["location"] = "imgui_internal:442"
 defs["igImRsqrt"][1]["ov_cimguiname"] = "igImRsqrt_Float"
 defs["igImRsqrt"][1]["ret"] = "float"
 defs["igImRsqrt"][1]["signature"] = "(float)"
@@ -23852,7 +23853,7 @@ defs["igPlotHistogram"][1]["argsT"][8]["type"] = "ImVec2"
 defs["igPlotHistogram"][1]["argsT"][9] = {}
 defs["igPlotHistogram"][1]["argsT"][9]["name"] = "stride"
 defs["igPlotHistogram"][1]["argsT"][9]["type"] = "int"
-defs["igPlotHistogram"][1]["argsoriginal"] = "(const char* label,const float* values,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282346638528859811704183484516925e+38F,float scale_max=3.40282346638528859811704183484516925e+38F,ImVec2 graph_size=ImVec2(0,0),int stride=sizeof(float))"
+defs["igPlotHistogram"][1]["argsoriginal"] = "(const char* label,const float* values,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282347e+38F,float scale_max=3.40282347e+38F,ImVec2 graph_size=ImVec2(0,0),int stride=sizeof(float))"
 defs["igPlotHistogram"][1]["call_args"] = "(label,values,values_count,values_offset,overlay_text,scale_min,scale_max,graph_size,stride)"
 defs["igPlotHistogram"][1]["cimguiname"] = "igPlotHistogram"
 defs["igPlotHistogram"][1]["defaults"] = {}
@@ -23901,7 +23902,7 @@ defs["igPlotHistogram"][2]["argsT"][8]["type"] = "float"
 defs["igPlotHistogram"][2]["argsT"][9] = {}
 defs["igPlotHistogram"][2]["argsT"][9]["name"] = "graph_size"
 defs["igPlotHistogram"][2]["argsT"][9]["type"] = "ImVec2"
-defs["igPlotHistogram"][2]["argsoriginal"] = "(const char* label,float(*values_getter)(void* data,int idx),void* data,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282346638528859811704183484516925e+38F,float scale_max=3.40282346638528859811704183484516925e+38F,ImVec2 graph_size=ImVec2(0,0))"
+defs["igPlotHistogram"][2]["argsoriginal"] = "(const char* label,float(*values_getter)(void* data,int idx),void* data,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282347e+38F,float scale_max=3.40282347e+38F,ImVec2 graph_size=ImVec2(0,0))"
 defs["igPlotHistogram"][2]["call_args"] = "(label,values_getter,data,values_count,values_offset,overlay_text,scale_min,scale_max,graph_size)"
 defs["igPlotHistogram"][2]["cimguiname"] = "igPlotHistogram"
 defs["igPlotHistogram"][2]["defaults"] = {}
@@ -23950,7 +23951,7 @@ defs["igPlotLines"][1]["argsT"][8]["type"] = "ImVec2"
 defs["igPlotLines"][1]["argsT"][9] = {}
 defs["igPlotLines"][1]["argsT"][9]["name"] = "stride"
 defs["igPlotLines"][1]["argsT"][9]["type"] = "int"
-defs["igPlotLines"][1]["argsoriginal"] = "(const char* label,const float* values,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282346638528859811704183484516925e+38F,float scale_max=3.40282346638528859811704183484516925e+38F,ImVec2 graph_size=ImVec2(0,0),int stride=sizeof(float))"
+defs["igPlotLines"][1]["argsoriginal"] = "(const char* label,const float* values,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282347e+38F,float scale_max=3.40282347e+38F,ImVec2 graph_size=ImVec2(0,0),int stride=sizeof(float))"
 defs["igPlotLines"][1]["call_args"] = "(label,values,values_count,values_offset,overlay_text,scale_min,scale_max,graph_size,stride)"
 defs["igPlotLines"][1]["cimguiname"] = "igPlotLines"
 defs["igPlotLines"][1]["defaults"] = {}
@@ -23999,7 +24000,7 @@ defs["igPlotLines"][2]["argsT"][8]["type"] = "float"
 defs["igPlotLines"][2]["argsT"][9] = {}
 defs["igPlotLines"][2]["argsT"][9]["name"] = "graph_size"
 defs["igPlotLines"][2]["argsT"][9]["type"] = "ImVec2"
-defs["igPlotLines"][2]["argsoriginal"] = "(const char* label,float(*values_getter)(void* data,int idx),void* data,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282346638528859811704183484516925e+38F,float scale_max=3.40282346638528859811704183484516925e+38F,ImVec2 graph_size=ImVec2(0,0))"
+defs["igPlotLines"][2]["argsoriginal"] = "(const char* label,float(*values_getter)(void* data,int idx),void* data,int values_count,int values_offset=0,const char* overlay_text=((void*)0),float scale_min=3.40282347e+38F,float scale_max=3.40282347e+38F,ImVec2 graph_size=ImVec2(0,0))"
 defs["igPlotLines"][2]["call_args"] = "(label,values_getter,data,values_count,values_offset,overlay_text,scale_min,scale_max,graph_size)"
 defs["igPlotLines"][2]["cimguiname"] = "igPlotLines"
 defs["igPlotLines"][2]["defaults"] = {}
@@ -24230,7 +24231,7 @@ defs["igProgressBar"][1]["argsT"][2]["type"] = "const ImVec2"
 defs["igProgressBar"][1]["argsT"][3] = {}
 defs["igProgressBar"][1]["argsT"][3]["name"] = "overlay"
 defs["igProgressBar"][1]["argsT"][3]["type"] = "const char*"
-defs["igProgressBar"][1]["argsoriginal"] = "(float fraction,const ImVec2& size_arg=ImVec2(-1.17549435082228750796873653722224568e-38F,0),const char* overlay=((void*)0))"
+defs["igProgressBar"][1]["argsoriginal"] = "(float fraction,const ImVec2& size_arg=ImVec2(-1.17549435e-38F,0),const char* overlay=((void*)0))"
 defs["igProgressBar"][1]["call_args"] = "(fraction,size_arg,overlay)"
 defs["igProgressBar"][1]["cimguiname"] = "igProgressBar"
 defs["igProgressBar"][1]["defaults"] = {}

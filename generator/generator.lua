@@ -2,6 +2,9 @@
 --script for auto_funcs.h and auto_funcs.cpp generation
 --expects LuaJIT
 --------------------------------------------------------------------------
+
+package.path = package.path .. ";./?.lua"
+
 assert(_VERSION=='Lua 5.1',"Must use LuaJIT")
 assert(bit,"Must use LuaJIT")
 local script_args = {...}
@@ -104,7 +107,7 @@ local gdefines = {} --for FLT_MAX and others
 --helper functions
 --------------------------------functions for C generation
 --load parser module
-local cpp2ffi = require"cpp2ffi"
+local cpp2ffi = require("cpp2ffi")
 local read_data = cpp2ffi.read_data
 local save_data = cpp2ffi.save_data
 local copyfile = cpp2ffi.copyfile
