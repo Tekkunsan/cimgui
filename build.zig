@@ -35,7 +35,7 @@ pub fn addCImgui(b: *std.Build, target: std.zig.CrossTarget, optimize: std.built
         .optimize = optimize,
     });
     cImgui.linkLibCpp();
-    addCimguiHeader(cImgui);
+    cImgui.addIncludePath(srcdir ++ "/imgui");
 
     cImgui.addCSourceFiles(&.{
         srcdir ++ "/cimgui.cpp",
