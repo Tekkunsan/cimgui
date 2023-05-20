@@ -2,3 +2,6 @@
 	path = imgui
 	url = https://github.com/ocornut/imgui.git
 	branch = docking
+[submodule "examples/deps/mach-glfw"]
+	path = examples/deps/mach-glfw
+	url = https://github.com/hexops/mach-glfw
